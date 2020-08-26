@@ -1,0 +1,4 @@
+
+RUN coverage run -m unittest discover
+RUN coverage xml -i
+RUN sonar-scanner -Dsonar.projectKey=$ProjectKey -Dsonar.sources=. -Dsonar.python.coverage.reportPaths=coverage.xml -Dsonar.host.url=http://10.90.77.218:9000 -Dsonar.login=$LoginCred
